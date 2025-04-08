@@ -1,0 +1,26 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) return false;
+       return x == helper(x, 0);
+    }
+
+    private int helper(int x, int rev) {
+        if (x == 0) return rev;
+
+        return helper(x / 10, rev * 10 + x % 10);
+    }
+}
+
+
+        // String num = String.valueOf(x);
+        // int l = 0;
+        // int r = num.length() - 1;
+
+        // while (l <= r) {
+        //     if (num.charAt(l) != num.charAt(r)) {
+        //         return false;
+        //     }
+        //     l++;
+        //     r--;
+        // }
+        // return true;

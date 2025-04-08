@@ -1,0 +1,26 @@
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    int ans = pro(1234);
+	    System.out.println(ans);
+	}
+	
+	public static int pro(int n) {
+	    if (n % 10 == n) return n;
+	    
+	    return (n % 10) * pro(n / 10);
+	}
+}
+
+// 		int n = 1234;
+// 		int p = 1;
+		
+// 		while (n > 1) {
+// 		    int num = n % 10;
+// 		    p *= num;
+// 		    n /= 10;
+// 		}
+		
+// 		System.out.println(p);
+

@@ -1,0 +1,33 @@
+import java.util.Arrays;
+
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
+        int[] arr = {5, 3, 8, 4, 2};
+        selectionSort(arr, 0);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void selectionSort(int[] arr, int i) {
+        if (i == arr.length - 1) return;
+
+        int minIndex = FindMinIndex(arr, i, i + 1);
+
+        // Swap
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+
+        selectionSort(arr, i + 1);
+    }
+
+    public static int FindMinIndex(int[] arr, int minIndex, int j) {
+        // ✅ Base case to stop recursion
+        if (j == arr.length) return minIndex;
+
+        if (arr[j] < arr[minIndex]) {
+            minIndex = j;
+        }
+
+        return FindMinIndex(arr, minIndex, j + 1);
+    }
+}

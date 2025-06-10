@@ -1,0 +1,16 @@
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		table(3, 1);
+
+	}
+	public static void table(int n, int r) {
+	    if (r > 10) {
+	        return;
+	    }
+	    System.out.println(n * r);
+	    table(n, r + 1);
+	    
+	}
+}
